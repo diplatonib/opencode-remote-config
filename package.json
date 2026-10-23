@@ -1,0 +1,43 @@
+{
+  "name": "@diplatonib/opencode-remote-config",
+  "version": "0.1.0",
+  "description": "Opencode plugin for loading remote organization config from HTTP server",
+  "main": "src/main.ts",
+  "exports": {
+    ".": "./src/main.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "rm -rfv ./out/ && mkdir -p ./out && echo \"/**\n\n$(cat README.md)\n\n*/\" > ./out/remote-config.js && esbuild src/main.ts --bundle --tree-shaking=true --target=esnext --format=esm --platform=node >> ./out/remote-config.js",
+    "test": "vitest run",
+    "watch:test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "remote-config"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:diplatonib/opencode-remote-config.git"
+  },
+  "author": {
+    "name": "Dmitry Platonov",
+    "email": "diplatonib@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.15.7",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0"
+  },
+  "dependencies": {
+    "es-toolkit": "^1.47.0"
+  }
+}

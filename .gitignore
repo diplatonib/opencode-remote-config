@@ -1,0 +1,9 @@
+out/
+dist/
+node_modules/
+*.tsbuildinfo
+tests/**/*.js
+tests/**/*.d.ts
+.idea/
+.env
+*.log
